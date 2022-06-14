@@ -1,0 +1,18 @@
+pipeline{
+    stages{
+        stage("docker build"){
+            steps{
+                script{
+                    sh "docker build -f Dockerfile -t unwash/primero:latest"
+                }
+            }
+        }
+        stage("docker push"){
+            steps{
+                script{
+                    sh "docker push unwash/primero:1.0.0.${BUILD_ID}"
+                }
+            }
+        }
+    }
+}
