@@ -4,7 +4,7 @@ pipeline{
         stage("docker build"){
             steps{
                 script{
-                    sh "docker build -f Dockerfile -t unwash/primero:latest"
+                    sh "docker build -t unwash/primero:latest"
                 }
             }
         }
