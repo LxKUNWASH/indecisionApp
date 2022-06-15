@@ -4,7 +4,7 @@ pipeline{
         stage("docker build"){
             steps{
                 script{
-                    sh "/usr/local/bin/docker build -t vuerx ."
+                    sh "/usr/local/bin/docker build -t unwash/primero:1.0.0.${BUILD_ID} ."
                 }
             }
         }
