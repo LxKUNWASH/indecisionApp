@@ -4,10 +4,16 @@ pipeline{
         stage("docker build"){
             steps{
                 script{
-                    sh "docker ps"
+                    sh "/usr/local/bin/docker build -t vuerx ."
                 }
             }
         }
-  
+        stage("docker push"){
+            steps{
+                script{
+                    sh "docker push unwash/primero:1.0.0.${BUILD_ID}"
+                }
+            }
+        }
     }
 }
