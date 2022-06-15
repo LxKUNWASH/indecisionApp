@@ -11,7 +11,7 @@ pipeline{
         stage("docker push"){
             steps{
                 script{
-                    sh "docker push unwash/primero:1.0.0.${BUILD_ID}"
+                    sh "/usr/local/bin/docker push unwash/primero:1.0.0.${BUILD_ID}"
                 }
             }
         }
